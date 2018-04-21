@@ -21,7 +21,7 @@ let percent_ele;
 
 function setup() {
   createCanvas(400, 200).parent('container');
-  nn = new NeuralNetwork(784, 64, 10);
+  nn = new NeuralNetwork(784, 32, 32, 10);
   user_digit = createGraphics(200, 200);
   user_digit.pixelDensity(1);
 
@@ -169,7 +169,7 @@ function keyPressed() {
 
 
 function findMax(arr) {
-  let record = 0;
+  let record = -Infinity;
   let index = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > record) {
